@@ -13,7 +13,7 @@ Intern::~Intern() {
     std::cout << "Intern: destructor called" << std::endl;
 }
 
-Intern& Intern::operator =(const Intern &intern) {
+Intern& Intern::operator =(const Intern& intern) {
 	(void)intern;
 	std::cout << "Intern: copy assignment called" << std::endl;
 	return *this;
@@ -39,6 +39,10 @@ AForm*	Intern::makeForm(const std::string& formName, const std::string& target) 
 	for (int i = 0; i < 3; ++i) {
 		if (formNames[i] == formName) {
 			ret = funcs[i](target);
+			if (ret == NULL) {
+				std::cerr << "memory allocation error" << std::endl;
+				return NULL;
+			}
 			std::cout << "Intern creates " << ret->getName() << std::endl;
 			return ret;
 		}

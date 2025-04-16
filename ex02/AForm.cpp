@@ -2,7 +2,7 @@
 
 AForm::AForm(std::string name, bool isSigned, int gradeToSign, int gradeToExecute):
 	name_(name), isSigned_(isSigned), gradeToSign_(gradeToSign), gradeToExecute_(gradeToExecute) {
-	std::cout << "Form: Default or assignement constructor called" << std::endl;
+	std::cout << "AForm: Default or assignement constructor called" << std::endl;
 	if (gradeToSign_ <= 0 || gradeToExecute <= 0) {
 		throw(GradeTooHighException());
 	}
@@ -13,7 +13,7 @@ AForm::AForm(std::string name, bool isSigned, int gradeToSign, int gradeToExecut
 
 AForm::AForm(const AForm &form): name_(form.name_), isSigned_(form.isSigned_),
 	gradeToSign_(form.gradeToSign_), gradeToExecute_(form.gradeToExecute_) {
-	std::cout << "Form: Copy constructor called" << std::endl;
+	std::cout << "AForm: Copy constructor called" << std::endl;
 	if (gradeToSign_ <= 0 || gradeToExecute_ <= 0) {
 		throw(GradeTooHighException());
 	}
@@ -23,11 +23,11 @@ AForm::AForm(const AForm &form): name_(form.name_), isSigned_(form.isSigned_),
 }
 
 AForm::~AForm() {
-	std::cout << "Form: Destructor called" << std::endl;
+	std::cout << "AForm: Destructor called" << std::endl;
 }
 
 AForm& AForm::operator=(const AForm& form) {
-	std::cout << "Form: copy assingment called" << std::endl;
+	std::cout << "AForm: copy assingment called" << std::endl;
 	if (this != &form) {
 		isSigned_ = form.isSigned_;
 	}
