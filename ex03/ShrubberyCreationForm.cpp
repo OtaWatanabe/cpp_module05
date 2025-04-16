@@ -22,9 +22,9 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	getName();
 	checkExecutable(executor);
-	std::ofstream	writeFile(target_ + "_shrubbery");
+	std::string	filename = target_ + "_shrubbery";
+	std::ofstream	writeFile(filename.c_str());
 	if (writeFile.fail()) {
 		std::cerr << "failed to open file " << target_ + "_shrubbery" << std::endl;
 		return ;

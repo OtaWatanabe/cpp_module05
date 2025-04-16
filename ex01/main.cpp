@@ -11,7 +11,7 @@ int	main() {
 	std::cout << form3 << std::endl;
 	std::cout << form4 << std::endl;
 	form4 = form1;
-	std::cout << form4;
+	std::cout << form4 << std::endl;
 
 	std::cout << "check get functions" << std::endl;
 	std::cout << "name: " << form1.getName() << std::endl;
